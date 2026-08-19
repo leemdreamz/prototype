@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype Pictures — Production Company</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;1,9..40,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- ── Navigation ───────────────────────────────────────────────── -->
+    <nav class="nav" id="nav">
+        <a href="/" class="nav__logo">Prototype Pictures</a>
+        <div class="nav__links">
+            <a href="#work">Work</a>
+            <a href="#directors">Directors</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <button class="nav__toggle" aria-label="Open menu" id="navToggle">
+            <span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu__close" id="menuClose" aria-label="Close menu">✕</button>
+        <nav class="mobile-menu__nav">
+            <a href="#work" class="mobile-menu__link">Work</a>
+            <a href="#directors" class="mobile-menu__link">Directors</a>
+            <a href="#about" class="mobile-menu__link">About</a>
+            <a href="#contact" class="mobile-menu__link">Contact</a>
+        </nav>
+        <div class="mobile-menu__footer">
+            <span>Los Angeles</span>
+        </div>
+    </div>
+
+    <!-- ── Hero ─────────────────────────────────────────────────────── -->
+    <section class="hero" id="hero">
+        <!-- Video layer — swap src for your actual reel -->
+        <div class="hero__media">
+            <video
+                class="hero__video"
+                autoplay
+                muted
+                playsinline
+                poster=""
+            >
+                <source src="assets/Sequence 01_1.mp4" type="video/mp4">
+            </video>
+            <!-- Gradient placeholder shown when no video src loads -->
+            <div class="hero__video-placeholder"></div>
+        </div>
+
+        <!-- Dark vignette overlay -->
+        <div class="hero__overlay"></div>
+
+        <!-- Bottom-left project credit -->
+        <div class="hero__credit">
+            <p class="hero__credit-label">Featured</p>
+            <h2 class="hero__credit-title">Family Dog (Coors Spec)</h2>
+            <p class="hero__credit-meta">Dir. Mike Overton &ensp;/&ensp; Coors</p>
+        </div>
+
+        <!-- Center play reel button -->
+        <button class="hero__reel-btn" id="reelBtn" aria-label="Watch reel" type="button">
+            <span class="hero__reel-circle">
+                <svg viewBox="0 0 24 24" fill="white" width="18" height="18">
+                    <polygon points="6,3 20,12 6,21"/>
+                </svg>
+            </span>
+            <span class="hero__reel-label">Watch Reel</span>
+        </button>
+
+        <div class="hero__nav-arrows" aria-label="Browse reel videos">
+            <button class="hero__nav-arrow hero__nav-arrow--left" id="prevVideo" aria-label="Previous video" type="button">‹</button>
+            <button class="hero__nav-arrow hero__nav-arrow--right" id="nextVideo" aria-label="Next video" type="button">›</button>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="hero__scroll">
+            <span class="hero__scroll-text">Scroll</span>
+            <div class="hero__scroll-bar"></div>
+        </div>
+    </section>
+
+    <!-- Reel Lightbox -->
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+        <button class="lightbox__close" id="lightboxClose" aria-label="Close">✕</button>
+        <div class="lightbox__inner">
+            <video id="reelVideo" class="lightbox__video" controls playsinline muted preload="metadata">
+                <source src="assets/Sequence 01_1.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+    <!-- ── Marquee Strip ─────────────────────────────────────────────── -->
+    <div class="marquee-strip">
+        <div class="marquee-track">
+            <span>Commercials</span>
+            <span class="marquee-dot">·</span>
+            <span>Music Videos</span>
+            <span class="marquee-dot">·</span>
+            <span>Film</span>
+            <span class="marquee-dot">·</span>
+            <span>Branded Content</span>
+            <span class="marquee-dot">·</span>
+            <span>Short Form</span>
+            <span class="marquee-dot">·</span>
+            <span>Documentaries</span>
+            <span class="marquee-dot">·</span>
+            <span>Commercials</span>
+            <span class="marquee-dot">·</span>
+            <span>Music Videos</span>
+            <span class="marquee-dot">·</span>
+            <span>Film</span>
+            <span class="marquee-dot">·</span>
+            <span>Branded Content</span>
+            <span class="marquee-dot">·</span>
+            <span>Short Form</span>
+            <span class="marquee-dot">·</span>
+            <span>Documentaries</span>
+            <span class="marquee-dot">·</span>
+        </div>
+    </div>
+
+    <!-- ── Selected Work ─────────────────────────────────────────────── -->
+    <section class="work" id="work">
+        <div class="section-head">
+            <span class="section-label">Selected Work</span>
+        </div>
+
+        <div class="work-grid">
+
+            <!-- Large item — full width -->
+            <article class="work-card work-card--large reveal">
+                <div class="work-card__media">
+                    <video class="work-card__video" autoplay muted loop playsinline preload="metadata" poster="">
+                        <source src="assets/Sequence 01_1.mp4" type="video/mp4">
+                    </video>
+                    <div class="work-card__hover-overlay">
+                        <svg viewBox="0 0 24 24" fill="white" width="32"><polygon points="6,3 20,12 6,21"/></svg>
+                    </div>
+                </div>
+                <div class="work-card__info">
+                    <span class="work-card__num">01</span>
+                    <div class="work-card__text">
+<h3>Family Dog (Coors Spec)</h3>
+                    <p>Coors &ensp;·&ensp; Dir. Mike Overton</p>
+                    </div>
+                    <span class="work-card__category">Commercial</span>
+                </div>
+            </article>
+
+            <!-- Half items -->
+            <article class="work-card work-card--half reveal">
+                <div class="work-card__media">
+                    <video class="work-card__video" autoplay muted loop playsinline preload="metadata" poster="">
+                        <source src="assets/Late Night.mp4" type="video/mp4">
+                    </video>
+                    <div class="work-card__hover-overlay">
+                        <svg viewBox="0 0 24 24" fill="white" width="28"><polygon points="6,3 20,12 6,21"/></svg>
+                    </div>
+                </div>
+                <div class="work-card__info">
+                    <span class="work-card__num">02</span>
+                    <div class="work-card__text">
+                        <h3>Late Night Priorities (Taco Bell Spec)</h3>
+                        <p>Taco Bell &ensp;·&ensp; Dir. Liam Morrison</p>
+                    </div>
+                    <span class="work-card__category">Commercial</span>
+                </div>
+            </article>
+
+            <article class="work-card work-card--half reveal">
+                <div class="work-card__media">
+                    <video class="work-card__video" autoplay muted loop playsinline preload="metadata" poster="">
+                        <source src="assets/Roadkill-web.mp4" type="video/mp4">
+                    </video>
+                    <div class="work-card__hover-overlay">
+                        <svg viewBox="0 0 24 24" fill="white" width="28"><polygon points="6,3 20,12 6,21"/></svg>
+                    </div>
+                </div>
+                <div class="work-card__info">
+                    <span class="work-card__num">03</span>
+                    <div class="work-card__text">
+                        <h3>Roadkill (Short Film)</h3>
+                        <p>Short Film</p>
+                    </div>
+                    <span class="work-card__category">Short Film</span>
+                </div>
+            </article>
+
+            <!-- Another large item -->
+            <article class="work-card work-card--large reveal">
+                <div class="work-card__media">
+                    <div class="work-card__placeholder" style="--hue:340"></div>
+                    <div class="work-card__hover-overlay">
+                        <svg viewBox="0 0 24 24" fill="white" width="32"><polygon points="6,3 20,12 6,21"/></svg>
+                    </div>
+                </div>
+                <div class="work-card__info">
+                    <span class="work-card__num">04</span>
+                    <div class="work-card__text">
+                        <h3>The Last Light</h3>
+                        <p>Original Film &ensp;·&ensp; Dir. Jordan Wu</p>
+                    </div>
+                    <span class="work-card__category">Short Film</span>
+                </div>
+            </article>
+
+            <!-- Third row halves -->
+            <article class="work-card work-card--half reveal">
+                <div class="work-card__media">
+                    <div class="work-card__placeholder" style="--hue:160"></div>
+                    <div class="work-card__hover-overlay">
+                        <svg viewBox="0 0 24 24" fill="white" width="28"><polygon points="6,3 20,12 6,21"/></svg>
+                    </div>
+                </div>
+                <div class="work-card__info">
+                    <span class="work-card__num">05</span>
+                    <div class="work-card__text">
+                        <h3>Open Roads</h3>
+                        <p>Auto Brand &ensp;·&ensp; Dir. Alex Chen</p>
+                    </div>
+                    <span class="work-card__category">Commercial</span>
+                </div>
+            </article>
+
+            <article class="work-card work-card--half reveal">
+                <div class="work-card__media">
+                    <div class="work-card__placeholder" style="--hue:50"></div>
+                    <div class="work-card__hover-overlay">
+                        <svg viewBox="0 0 24 24" fill="white" width="28"><polygon points="6,3 20,12 6,21"/></svg>
+                    </div>
+                </div>
+                <div class="work-card__info">
+                    <span class="work-card__num">06</span>
+                    <div class="work-card__text">
+                        <h3>Weightless</h3>
+                        <p>Fashion House &ensp;·&ensp; Dir. Maya Torres</p>
+                    </div>
+                    <span class="work-card__category">Fashion Film</span>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- ── Directors ─────────────────────────────────────────────────── -->
+    <section class="directors" id="directors">
+        <div class="section-head">
+            <span class="section-label">Directors</span>
+            <a href="#" class="section-link">View All</a>
+        </div>
+
+        <div class="directors-grid">
+
+            <div class="director-card reveal">
+                <div class="director-card__photo">
+                    <div class="director-card__placeholder" style="--hue:200"></div>
+                </div>
+                <div class="director-card__info">
+                    <h3>Alex Chen</h3>
+                    <p>Commercial &ensp;·&ensp; Music Video</p>
+                </div>
+            </div>
+
+            <div class="director-card reveal">
+                <div class="director-card__photo">
+                    <div class="director-card__placeholder" style="--hue:350"></div>
+                </div>
+                <div class="director-card__info">
+                    <h3>Sam Park</h3>
+                    <p>Music Video &ensp;·&ensp; Narrative</p>
+                </div>
+            </div>
+
+            <div class="director-card reveal">
+                <div class="director-card__photo">
+                    <div class="director-card__placeholder" style="--hue:260"></div>
+                </div>
+                <div class="director-card__info">
+                    <h3>Maya Torres</h3>
+                    <p>Fashion Film &ensp;·&ensp; Branded</p>
+                </div>
+            </div>
+
+            <div class="director-card reveal">
+                <div class="director-card__photo">
+                    <div class="director-card__placeholder" style="--hue:130"></div>
+                </div>
+                <div class="director-card__info">
+                    <h3>Jordan Wu</h3>
+                    <p>Documentary &ensp;·&ensp; Short Film</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ── About ─────────────────────────────────────────────────────── -->
+    <section class="about" id="about">
+        <div class="about__inner">
+            <div class="about__label-col">
+                <span class="section-label">About</span>
+            </div>
+            <div class="about__content reveal">
+                <p class="about__eyebrow">Independent. Uncompromising. Built for culture.</p>
+                <p class="about__statement">
+                    Prototype Pictures makes work that feels inevitable — campaigns, films, and brand stories with the clarity of a strong idea and the craft of a world-class studio.
+                </p>
+
+                <div class="about__meta">
+                    <p class="about__body">
+                        We build from the brief outward: shaping narratives, directing talent, and creating images that move people in the room and online. From commercial production to short-form storytelling, we work with brands and artists who want work with intent, sharp point of view, and staying power.
+                    </p>
+
+                    <ul class="about__services">
+                        <li>Commercials</li>
+                        <li>Music Videos</li>
+                        <li>Short Films</li>
+                        <li>Branded Content</li>
+                    </ul>
+                </div>
+
+                <div class="about__stats">
+                    <div class="about__stat about__stat--single">
+                        <span class="about__stat-num">Los Angeles</span>
+                        <span class="about__stat-label">Based in</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Contact / Footer ──────────────────────────────────────────── -->
+    <footer class="footer" id="contact">
+        <div class="footer__top">
+            <div class="footer__cta reveal">
+                <p class="footer__cta-label">Get in touch</p>
+                <a href="mailto:liam@prototype-pictures.com" class="footer__email">liam@prototype-pictures.com</a>
+            </div>
+            <div class="footer__offices reveal">
+                <div class="footer__office">
+                    <span class="footer__office-city">Los Angeles</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer__bottom">
+            <span class="footer__copyright">© 2026 Prototype Pictures. All rights reserved.</span>
+            <div class="footer__social">
+                <a href="#">Instagram</a>
+                <a href="#">Vimeo</a>
+                <a href="#">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
