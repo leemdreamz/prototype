@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             label: 'Roadkill (Short Film)',
-            meta: 'Short Film',
+            meta: 'Dir. Mike Overton',
             src: 'assets/Roadkill-web.mp4'
         }
     ];
